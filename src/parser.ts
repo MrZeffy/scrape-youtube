@@ -103,7 +103,7 @@ const getVideoCount = (channel: any) => {
  */
 const getSubscriberCount = (channel: any) => {
     try {
-        let count = channel.subscriberCountText.simpleText.split(' ').shift();
+        let count =  channel.subscriberCountText.simpleText.split(' ').shift();
         let lastChar = count.slice(-1);
         if (parseInt(lastChar) === NaN) {
             // If there's no K, M or B at the end.
@@ -125,6 +125,7 @@ const getSubscriberCount = (channel: any) => {
         }
         // Returning updated count;
         return slicedCount;
+        
     } catch (e) {
         return '0';
     }
